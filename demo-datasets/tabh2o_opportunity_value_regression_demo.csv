@@ -1,0 +1,61 @@
+Opportunity_ID,Industry,Company_Size,Region,Previous_Deals,Engagement_Score,Product_Interest,Sales_Interactions,Current_Pipeline_Value_USD,Opportunity_Value_Next_90d_USD
+OPP-1001,Technology,Mid-Market,North America,4,51,4,5,396123,70032.0
+OPP-1002,Technology,Large Enterprise,North America,6,24,1,3,124629,40379.0
+OPP-1003,Manufacturing,Mid-Market,EMEA,8,73,4,15,318944,94305.0
+OPP-1004,Public Sector,Mid-Market,EMEA,6,63,5,5,122886,84913.0
+OPP-1005,Healthcare,Mid-Market,North America,6,32,6,12,326526,87720.0
+OPP-1006,Banking,Large Enterprise,LATAM,8,35,7,3,299428,93235.0
+OPP-1007,Technology,Large Enterprise,APAC,3,28,1,22,129484,60056.0
+OPP-1008,Banking,Mid-Market,North America,6,55,8,21,447314,132167.0
+OPP-1009,Healthcare,Enterprise,EMEA,4,29,10,21,99725,59167.0
+OPP-1010,Insurance,Mid-Market,LATAM,6,54,9,8,368935,111461.0
+OPP-1011,Public Sector,Mid-Market,EMEA,0,60,7,9,44701,26866.0
+OPP-1012,Manufacturing,Large Enterprise,APAC,3,83,7,21,250570,63351.0
+OPP-1013,Insurance,Mid-Market,APAC,6,94,7,12,124987,95000.0
+OPP-1014,Insurance,Large Enterprise,LATAM,1,26,2,5,338962,56401.0
+OPP-1015,Technology,Enterprise,North America,6,68,10,15,287408,90888.0
+OPP-1016,Manufacturing,Mid-Market,North America,8,54,6,4,163878,76752.0
+OPP-1017,Retail,Mid-Market,APAC,8,42,9,4,466402,186459.0
+OPP-1018,Public Sector,Large Enterprise,EMEA,2,67,3,18,418224,194638.0
+OPP-1019,Banking,Large Enterprise,APAC,7,22,2,12,470703,233000.0
+OPP-1020,Public Sector,Enterprise,EMEA,0,50,10,3,54907,43262.0
+OPP-1021,Public Sector,Mid-Market,EMEA,2,80,9,6,148966,71801.0
+OPP-1022,Manufacturing,Enterprise,EMEA,8,45,5,13,362157,150455.0
+OPP-1023,Retail,Large Enterprise,LATAM,1,51,4,3,187254,32258.0
+OPP-1024,Manufacturing,Mid-Market,EMEA,0,29,1,8,45337,24095.0
+OPP-1025,Public Sector,Enterprise,North America,8,50,5,22,264496,77126.0
+OPP-1026,Insurance,Large Enterprise,LATAM,3,80,7,7,59453,36588.0
+OPP-1027,Retail,Enterprise,LATAM,6,79,1,22,352598,182883.0
+OPP-1028,Banking,Mid-Market,LATAM,5,33,4,7,109724,54210.0
+OPP-1029,Insurance,Enterprise,EMEA,4,79,4,3,242328,118515.0
+OPP-1030,Public Sector,Large Enterprise,North America,0,89,1,3,495683,190341.0
+OPP-1031,Insurance,Mid-Market,LATAM,7,81,4,13,483139,83553.0
+OPP-1032,Retail,Mid-Market,LATAM,4,78,5,14,375214,191281.0
+OPP-1033,Public Sector,Large Enterprise,LATAM,2,44,5,7,40662,31247.0
+OPP-1034,Manufacturing,Mid-Market,APAC,0,26,10,16,273638,136095.0
+OPP-1035,Manufacturing,Mid-Market,North America,8,30,3,3,321969,62854.0
+OPP-1036,Public Sector,Mid-Market,LATAM,1,92,4,19,321699,51206.0
+OPP-1037,Banking,Enterprise,APAC,4,46,6,8,149258,60118.0
+OPP-1038,Technology,Large Enterprise,APAC,7,60,2,1,250273,105842.0
+OPP-1039,Manufacturing,Mid-Market,North America,8,47,9,9,79445,75628.0
+OPP-1040,Banking,Mid-Market,APAC,4,40,8,18,378857,101915.0
+OPP-1041,Public Sector,Large Enterprise,North America,8,58,2,5,148656,48801.0
+OPP-1042,Banking,Large Enterprise,EMEA,4,56,10,7,386235,114619.0
+OPP-1043,Technology,Large Enterprise,APAC,8,82,5,2,58390,57214.0
+OPP-1044,Public Sector,Enterprise,North America,0,62,3,21,147340,33436.0
+OPP-1045,Retail,Large Enterprise,LATAM,8,21,2,3,473002,184896.0
+OPP-1046,Insurance,Large Enterprise,North America,5,94,9,5,235332,
+OPP-1047,Healthcare,Enterprise,North America,5,46,4,22,63893,
+OPP-1048,Manufacturing,Enterprise,EMEA,3,40,3,14,22995,
+OPP-1049,Healthcare,Enterprise,EMEA,4,40,2,13,467266,
+OPP-1050,Retail,Mid-Market,EMEA,7,64,5,8,126876,
+OPP-1051,Insurance,Enterprise,APAC,4,28,5,12,346321,
+OPP-1052,Technology,Large Enterprise,APAC,0,34,5,6,314396,
+OPP-1053,Healthcare,Mid-Market,North America,6,64,6,14,327828,
+OPP-1054,Banking,Enterprise,EMEA,4,25,7,1,282587,
+OPP-1055,Manufacturing,Large Enterprise,EMEA,5,75,2,22,492749,
+OPP-1056,Healthcare,Large Enterprise,North America,4,84,5,22,224115,
+OPP-1057,Technology,Enterprise,EMEA,3,73,7,22,402237,
+OPP-1058,Manufacturing,Large Enterprise,APAC,6,90,1,10,160425,
+OPP-1059,Public Sector,Large Enterprise,APAC,7,76,8,22,122041,
+OPP-1060,Public Sector,Large Enterprise,EMEA,1,56,9,22,341843,
