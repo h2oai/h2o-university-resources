@@ -23,7 +23,8 @@ ciphertext; the passphrase decrypts it in the browser. Unlocking one page
 unlocks the others for that session, and there is a 30-day "remember this
 device" option.
 
-Passphrase: `presalesh2o` — internal use only.
+The passphrase is shared internally by H2O.ai University — it is deliberately
+not recorded in this repository.
 
 ## Published at
 
