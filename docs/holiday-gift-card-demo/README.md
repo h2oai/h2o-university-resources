@@ -15,7 +15,7 @@ The demo is based on a real-world use case: **creating policy-compliant holiday 
 To view and download the presentation slides used in this session, use the link below.  
 The slides open directly in your browser and can also be downloaded for offline use:
 
-https://github.com/Andreea-Turcu/holiday-company-gift-card-agents-demo/blob/main/Presentation%20Slides%20-%20Create%20Your%20Own%20AI%20Agent%20with%20h2oGPTe.pdf
+https://github.com/h2oai/h2o-university-resources/blob/3aabbac5f0d4de0c15a8b05e2864ebdf76c3c034/docs/holiday-gift-card-demo/Presentation%20Slides%20-%20Create%20Your%20Own%20AI%20Agent%20with%20h2oGPTe.pdf
 
 ---
 
