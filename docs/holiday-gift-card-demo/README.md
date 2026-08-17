@@ -29,7 +29,7 @@ https://youtu.be/RCsjmUjXLcw
 
 Both versions of the **policy-compliant gift recommendation applications**, built with the **Enterprise h2oGPTe freemium version**, are available here:
 
-https://andreea-turcu.github.io/holiday-company-gift-card-agents-demo/
+https://h2oai.github.io/h2o-university-resources/holiday-gift-card-demo/
 
 - Version 1: Traditional holiday theme  
 - Version 2: H2O.ai branded theme
@@ -94,52 +94,56 @@ The agent was built iteratively using carefully designed prompts. Below are the 
 
 **Slide 17**
 
-I’m planning a holiday party for 15 people with a $300 budget.
+```
+I'm planning a holiday party for 15 people with a $300 budget.
 Can you help me create a complete party plan including:
-	•	Budget breakdown (food, drinks, decorations, entertainment)
-	•	3 easy appetizer recipes
-	•	A shopping list
-	•	A timeline for party prep
+- Budget breakdown (food, drinks, decorations, entertainment)
+- 3 easy appetizer recipes
+- A shopping list
+- A timeline for party prep
 Make it festive and fun for a Christmas theme!
+```
 
 **Slide 18**
 
+```
 Perfect! Now regenerate that party plan as a JSON object with this schema:
 
 {
-“party_details”: {
-“theme”: “string”,
-“guest_count”: number,
-“total_budget”: number
-},
-“budget_breakdown”: {
-“food”: number,
-“drinks”: number,
-“decorations”: number,
-“entertainment”: number
-},
-“recipes”: [
-{
-“name”: “string”,
-“servings”: number,
-“prep_time_minutes”: number,
-“ingredients”: [“string”],
-“instructions”: “string”
-}
-],
-“shopping_list”: {
-“category”: [“string”]
-},
-“timeline”: [
-{
-“task”: “string”,
-“when”: “string”,
-“duration_minutes”: number
-}
-]
+  "party_details": {
+    "theme": "string",
+    "guest_count": number,
+    "total_budget": number
+  },
+  "budget_breakdown": {
+    "food": number,
+    "drinks": number,
+    "decorations": number,
+    "entertainment": number
+  },
+  "recipes": [
+    {
+      "name": "string",
+      "servings": number,
+      "prep_time_minutes": number,
+      "ingredients": ["string"],
+      "instructions": "string"
+    }
+  ],
+  "shopping_list": {
+    "category": ["string"]
+  },
+  "timeline": [
+    {
+      "task": "string",
+      "when": "string",
+      "duration_minutes": number
+    }
+  ]
 }
 
 Output ONLY the JSON, no extra text.
+```
 
 This step validates structured, machine-readable outputs.
 
@@ -149,21 +153,23 @@ This step validates structured, machine-readable outputs.
 
 **Slide 23**
 
+```
 You are an AI Agent that must follow these rules:
-	1.	Always use rag_text to retrieve relevant information from the attached document collection before answering.
-	2.	Base your answers on the retrieved content and clearly state alignment or conflicts.
-	3.	Enforce all budgets and constraints strictly.
-	4.	When structured output is requested, return valid JSON matching the schema exactly.
-	5.	When providing recommendations, include:
-	•	gift_name
-	•	price
-	•	category
-	•	reason
-	•	policy_alignment
-	6.	If any request violates the policies, do not proceed and suggest compliant alternatives.
-	7.	Think step by step and apply explicit reasoning.
+1. Always use rag_text to retrieve relevant information from the attached document collection before answering.
+2. Base your answers on the retrieved content and clearly state alignment or conflicts.
+3. Enforce all budgets and constraints strictly.
+4. When structured output is requested, return valid JSON matching the schema exactly.
+5. When providing recommendations, include:
+   - gift_name
+   - price
+   - category
+   - reason
+   - policy_alignment
+6. If any request violates the policies, do not proceed and suggest compliant alternatives.
+7. Think step by step and apply explicit reasoning.
+```
 
-  ---
+---
 
 ### Policy Documents Used for RAG
 
@@ -181,24 +187,26 @@ https://diabengineering.com.au/wp-content/uploads/2019/02/HSE-MAN-001-001-DIAB-E
 
 **Slide 24**
 
+```
 I need to find appropriate holiday gifts for 3 different people:
-	1.	A colleague who loves tech gadgets (budget $40–70)
-	2.	A senior client who wants thoughtful, professional gifts (budget $80–120)
-	3.	A new team member who enjoys cooking and creative hobbies (budget $25–50)
+1. A colleague who loves tech gadgets (budget $40–70)
+2. A senior client who wants thoughtful, professional gifts (budget $80–120)
+3. A new team member who enjoys cooking and creative hobbies (budget $25–50)
 
 Please:
-	•	Use my company policy guidelines from our RAG collection
-	•	Follow the budget rules strictly
-	•	For each person, give 3 gift options
-	•	Include JSON output with:
-	•	gift_name
-	•	price
-	•	category
-	•	reason
-	•	policy_alignment
+- Use my company policy guidelines from our RAG collection
+- Follow the budget rules strictly
+- For each person, give 3 gift options
+- Include JSON output with:
+  - gift_name
+  - price
+  - category
+  - reason
+  - policy_alignment
 
 Make sure recommendations do not violate any company rules.
 If there are no Gift-Giving Guidelines in this document, please let me know.
+```
 
 ---
 
@@ -214,16 +222,17 @@ The AI is instructed to generate a **complete HTML application** with embedded C
 
 **Slide 27**
 
+```
 Modify the HTML so that only one gift can be selected per recipient.
 Update the budget dynamically based on the selected gift.
 Add a button to generate a pre-filled email with:
-	•	Recipient name
-	•	Email address
-	•	Subject and holiday message
+- Recipient name
+- Email address
+- Subject and holiday message
 
 Open the email in Gmail directly.
-Apply H2O.ai branding based on:
-https://h2o.ai/company/brand-kit/
+Apply H2O.ai branding based on: https://h2o.ai/company/brand-kit/
+```
 
 ---
 
@@ -268,7 +277,7 @@ This project uses **Enterprise h2oGPTe Freemium** for demonstration and educatio
 - Financial, legal, or HR-sensitive documents
 - Proprietary or regulated data
 
-Always ensure that any data used complies with your organization’s security, privacy, and compliance policies. For production use cases involving sensitive data, consult your legal, compliance, and security teams and use approved enterprise deployments.
+Always ensure that any data used complies with your organization's security, privacy, and compliance policies. For production use cases involving sensitive data, consult your legal, compliance, and security teams and use approved enterprise deployments.
 
 ---
 
