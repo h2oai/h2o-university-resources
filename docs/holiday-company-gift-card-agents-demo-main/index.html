@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holiday Gift Agent Dashboard - Versions</title>
+
+  <!-- Brand-leaning fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* H2O.ai brand-leaning palette */
+      --sunshine: #FFD200;     /* Sunshine Yellow */
+      --lightgray: #F9F9F9;    /* Light Gray */
+      --black: #000000;
+
+      /* Dark UI base (kept, but tuned to brand accents) */
+      --bg: #0A0C10;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --shadow: 0 18px 45px rgba(0,0,0,0.35);
+
+      --accent: var(--sunshine);
+      --accent-2: rgba(255,210,0,0.28);
+
+      --btn: rgba(255,255,255,0.10);
+      --btn-hover: rgba(255,255,255,0.16);
+      --focus: rgba(255,210,0,0.55);
+
+      --sys-bg: rgba(255,210,0,0.16);
+      --sys-border: rgba(255,210,0,0.55);
+
+      --pill-bg: rgba(255,255,255,0.06);
+      --pill-border: rgba(255,255,255,0.16);
+
+      --link-border: rgba(255,255,255,0.16);
+      --link-bg: rgba(255,255,255,0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin: 0;
+      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(255,210,0,0.18), transparent 55%),
+        radial-gradient(900px 600px at 80% 30%, rgba(255,210,0,0.10), transparent 60%),
+        radial-gradient(900px 600px at 50% 90%, rgba(255,255,255,0.06), transparent 60%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 20px 70px;
+    }
+
+    .topbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      font-size: 13px;
+      color: var(--muted);
+      user-select: none;
+      text-decoration: none;
+      transition: border-color .16s ease, background .16s ease, transform .16s ease, color .16s ease;
+    }
+    .badge:hover{
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-1px);
+      color: var(--text);
+    }
+
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255,210,0,0.15);
+    }
+
+    .hero{
+      padding: 26px 22px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.04));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    h1{
+      margin: 0;
+      font-size: clamp(26px, 3.2vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 900;
+    }
+
+    .subtitle{
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.55;
+      max-width: 78ch;
+      font-weight: 500;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 720px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      position: relative;
+      padding: 16px 16px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.26);
+      overflow: hidden;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .card h2{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--pill-border);
+      background: var(--pill-bg);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .pill .mini-dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(255,210,0,0.12);
+    }
+
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
+      min-height: 42px;
+      font-weight: 500;
+    }
+
+    .btn{
+      margin-top: auto;
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: var(--btn);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 850;
+      letter-spacing: 0.01em;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .btn:hover{
+      background: var(--btn-hover);
+      border-color: rgba(255,255,255,0.26);
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px rgba(255,210,0,0.18) inset;
+    }
+
+    .btn:focus-visible{
+      box-shadow: 0 0 0 4px var(--focus);
+    }
+
+    .arrow{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 16px;
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 18px 18px 14px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      box-shadow: 0 14px 38px rgba(0,0,0,0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-head{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .section h3{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      font-weight: 900;
+    }
+
+    .small{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .slides-actions{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link-btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--link-border);
+      background: var(--link-bg);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 850;
+      font-size: 13px;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .link-btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.24);
+      box-shadow: 0 0 0 1px rgba(255,210,0,0.16) inset;
+    }
+
+    /* Centered CTA below the version cards (brand yellow) */
+    .cta-row{
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+    }
+    .cta-wide{
+      width: min(720px, 100%);
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,210,0,0.75);
+      background: linear-gradient(180deg, rgba(255,210,0,0.38), rgba(255,255,255,0.06));
+      font-weight: 950;
+      letter-spacing: 0.01em;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,210,0,0.22) inset;
+      color: rgba(255,255,255,0.98);
+    }
+    .cta-wide .arrow{
+      background: rgba(0,0,0,0.18);
+      border-color: rgba(255,255,255,0.16);
+    }
+    .cta-wide:hover{
+      background: linear-gradient(180deg, rgba(255,210,0,0.48), rgba(255,255,255,0.08));
+      border-color: rgba(255,210,0,0.92);
+      box-shadow: 0 0 0 1px rgba(255,210,0,0.25) inset, 0 16px 40px rgba(0,0,0,0.22);
+    }
+
+    .disclaimer{
+      margin: 12px auto 0;
+      max-width: 90ch;
+      color: rgba(255,255,255,0.62);
+      font-size: 12.5px;
+      line-height: 1.5;
+      font-style: italic;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Video */
+    .video-wrap{
+      margin-top: 10px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.20);
+    }
+    .video-wrap iframe{
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border: 0;
+      display: block;
+    }
+
+    /* Webinar toolbar layout */
+    .webinar-actions{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .webinar-left{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .webinar-right{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    /* PDF.js single-page viewer */
+    .pdf-shell{
+      margin-top: 12px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.15);
+    }
+    .pdf-toolbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+    }
+    .pdf-left{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pdf-stat{
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .pdf-canvas-wrap{
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      min-height: 820px;
+    }
+    @media (max-width: 720px){
+      .pdf-canvas-wrap{ min-height: 680px; }
+    }
+    canvas#pdfCanvas{
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+    }
+    .pdf-error{
+      display: none;
+      padding: 14px 16px;
+      color: rgba(255,255,255,0.86);
+      background: rgba(255,120,120,0.10);
+      border-top: 1px solid rgba(255,255,255,0.10);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    /* Prompts */
+    details.prompt{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+    details.prompt summary{
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 900;
+      font-size: 13.5px;
+    }
+    details.prompt summary::-webkit-details-marker{ display: none; }
+    .prompt-meta{
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    pre.code{
+      margin: 10px 0 0;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.22);
+      overflow: auto;
+      color: rgba(255,255,255,0.88);
+      font-size: 12.5px;
+      line-height: 1.45;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .prompt-actions{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    /* System prompt styling (Slide 23) should be yellow */
+    details.prompt.system{
+      border-color: var(--sys-border);
+      background: linear-gradient(180deg, rgba(255,210,0,0.22), rgba(255,255,255,0.03));
+      box-shadow: 0 0 0 1px rgba(255,210,0,0.12) inset, 0 14px 38px rgba(0,0,0,0.22);
+    }
+    details.prompt.system summary{
+      color: rgba(255,255,255,0.98);
+    }
+    details.prompt.system pre.code{
+      border-color: rgba(255,210,0,0.40);
+      background: rgba(255,210,0,0.14);
+      box-shadow: 0 0 0 1px rgba(255,210,0,0.12) inset;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="badge">
+        <span class="dot"></span>
+        Enterprise h2oGPTe Demo
+        <span style="opacity:.7;">|</span>
+        Policy-compliant gift recommendations
+      </div>
+
+      <a class="badge" href="https://github.com/Andreea-Turcu/holiday-company-gift-card-agents-demo" target="_blank" rel="noopener">
+        View the GitHub repository
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="hero">
+      <h1>Holiday Gift Agent Dashboard</h1>
+      <p class="subtitle">
+        Choose a version of the interactive dashboard. Both demonstrate a policy-aware workflow for generating
+        holiday gift recommendations with strict budget constraints, then visualizing results in a single-page app.
+        Both versions were created during the webinar using the freemium version of Enterprise h2oGPTe.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>
+            Version 1
+            <span class="pill"><span class="mini-dot"></span> Holiday theme</span>
+          </h2>
+          <p>Traditional festive styling with the original interaction flow.</p>
+          <a class="btn" href="index_v1.html" target="_blank" rel="noopener" aria-label="Open Version 1 in a new tab">
+            Open Version 1
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <h2>
+            Version 2
+            <span class="pill"><span class="mini-dot"></span> H2O.ai branding</span>
+          </h2>
+          <p>Updated styling aligned with H2O.ai brand direction and improved UI polish.</p>
+          <a class="btn" href="index_v2.html" target="_blank" rel="noopener" aria-label="Open Version 2 in a new tab">
+            Open Version 2
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <!-- Important: keep exact domain + trailing slash -->
+        <a class="link-btn cta-wide" href="https://h2ogpte.genai.h2o.ai/" target="_blank" rel="noopener">
+          Launch Enterprise h2oGPTe (Freemium) <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="disclaimer">
+        Compliance note: This page and demo are for educational purposes. Do not include confidential or sensitive
+        data when using freemium environments. Use approved enterprise deployments for real policy workflows.
+      </div>
+    </div>
+
+    <div class="section" id="webinar">
+      <div class="section-head">
+        <div>
+          <h3>Webinar Recording</h3>
+          <p class="small">Watch the session, then jump into the slides, course, or quiz.</p>
+        </div>
+
+        <div class="webinar-actions">
+          <div class="webinar-left">
+            <button class="link-btn" id="jumpDemo" type="button">
+              Jump ahead to the demo <span class="arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="webinar-right">
+            <a class="link-btn" href="https://h2o.ai/university/courses/build-practical-ai-agents-with-h2ogpte/" target="_blank" rel="noopener">
+              Open course page <span class="arrow">↗</span>
+            </a>
+            <a class="link-btn" href="https://www.classmarker.com/online-test/start/?quiz=6kk693b055cdcb23" target="_blank" rel="noopener">
+              Open quiz <span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-wrap" aria-label="Embedded webinar video">
+        <iframe
+          id="webinarPlayer"
+          src="https://www.youtube.com/embed/RCsjmUjXLcw"
+          title="Webinar recording"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="section" id="slides">
+      <div class="section-head">
+        <div>
+          <h3>Presentation Slides</h3>
+          <p class="small">Single-page viewer with arrows. If you prefer, download the PDF.</p>
+        </div>
+
+        <div class="slides-actions">
+          <a class="link-btn" href="Presentation%20Slides%20-%20Create%20Your%20Own%20AI%20Agent%20with%20h2oGPTe.pdf" target="_blank" rel="noopener">
+            Open / Download PDF <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pdf-shell" aria-label="Single-page PDF viewer">
+        <div class="pdf-toolbar">
+          <div class="pdf-left">
+            <button class="link-btn" id="prevPage" type="button">Prev</button>
+            <button class="link-btn" id="nextPage" type="button">Next</button>
+            <span class="pdf-stat" id="pageStat">Loading…</span>
+          </div>
+        </div>
+
+        <div class="pdf-canvas-wrap" id="pdfCanvasWrap">
+          <canvas id="pdfCanvas"></canvas>
+        </div>
+
+        <div class="pdf-error" id="pdfError">
+          PDF failed to load. Confirm the PDF filename matches exactly (including capitalization) and is in the same folder as this page.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="prompts">
+      <div class="section-head">
+        <div>
+          <h3>Copy-paste Prompts (by slide)</h3>
+          <p class="small">Open each block, copy, paste, run. Links open in a new tab.</p>
+        </div>
+
+        <div class="slides-actions">
+          <button class="link-btn" id="downloadPromptsPdf" type="button">
+            Download prompts as PDF <span class="arrow">↗</span>
+          </button>
+        </div>
+      </div>
+
+      <details class="prompt">
+        <summary>Slide 17 <span class="prompt-meta">Party plan prompt</span></summary>
+        <pre class="code" id="p17">I'm planning a holiday party for 15 people with a $300 budget.
+Can you help me create a complete party plan including:
+- Budget breakdown (food, drinks, decorations, entertainment)
+- 3 easy appetizer recipes
+- A shopping list
+- A timeline for party prep
+Make it festive and fun for a Christmas theme!</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p17">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 18 <span class="prompt-meta">Regenerate as JSON</span></summary>
+        <pre class="code" id="p18">Perfect! Now regenerate that party plan as a JSON object with this schema:
+
+{
+  "party_details": {
+    "theme": "string",
+    "guest_count": number,
+    "total_budget": number
+  },
+  "budget_breakdown": {
+    "food": number,
+    "drinks": number,
+    "decorations": number,
+    "entertainment": number
+  },
+  "recipes": [
+    {
+      "name": "string",
+      "servings": number,
+      "prep_time_minutes": number,
+      "ingredients": ["string"],
+      "instructions": "string"
+    }
+  ],
+  "shopping_list": {
+    "category": ["string"]
+  },
+  "timeline": [
+    {
+      "task": "string",
+      "when": "string",
+      "duration_minutes": number
+    }
+  ]
+}
+
+Output ONLY the JSON, no extra text.</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p18">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 22 <span class="prompt-meta">RAG policy doc</span></summary>
+        <pre class="code" id="p22">https://triagelogic.com/wp-content/uploads/2018/06/Company-Policy-and-Procedure-June-1.18-V6.0.pdf</pre>
+        <div class="prompt-actions">
+          <a class="link-btn" href="https://triagelogic.com/wp-content/uploads/2018/06/Company-Policy-and-Procedure-June-1.18-V6.0.pdf" target="_blank" rel="noopener">
+            Open link <span class="arrow">↗</span>
+          </a>
+          <button class="link-btn" type="button" data-download="https://triagelogic.com/wp-content/uploads/2018/06/Company-Policy-and-Procedure-June-1.18-V6.0.pdf" data-filename="company_policy_triagelogic.pdf">
+            Download PDF <span class="arrow">↗</span>
+          </button>
+        </div>
+      </details>
+
+      <details class="prompt system">
+        <summary>Slide 23 <span class="prompt-meta">System prompt</span></summary>
+        <pre class="code" id="p23">You are an AI Agent that must follow these rules:
+1. Always use rag_text to retrieve relevant information from the attached document collection before answering.
+2. Base your answers on the retrieved content and cite alignment or conflicts clearly.
+3. When budgets or constraints are provided, enforce them strictly.
+4. When asked for structured output, return valid JSON matching the schema exactly.
+5. When providing recommendations, include:
+   - gift_name
+   - price
+   - category
+   - reason
+   - policy_alignment
+6. If any requested action violates the policies in the documents, do not proceed; suggest compliant alternatives.
+7. Think step by step and use explicit reasoning.</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p23">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 24 <span class="prompt-meta">Gift request</span></summary>
+        <pre class="code" id="p24">I need to find appropriate holiday gifts for 3 different people:
+1. A colleague who loves tech gadgets (budget $40-70)
+2. A senior client who wants thoughtful, professional gifts (budget $80-120)
+3. A new team member who enjoys cooking and creative hobbies (budget $25-50)
+Please:
+- Use my company policy guidelines from our RAG collection
+- Follow the budget rules strictly
+- For each person, give 3 gift options
+- Include JSON output with:
+  - gift_name
+  - price
+  - category
+  - reason
+  - policy_alignment
+Make sure recommendations do not violate any company rules, If there are no Gift-Giving Guidelines in this document, please let me know, I will provide to you another updated one.</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p24">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 25 <span class="prompt-meta">Additional policy manual</span></summary>
+        <pre class="code" id="p25">https://diabengineering.com.au/wp-content/uploads/2019/02/HSE-MAN-001-001-DIAB-Engineering-Policy-Manual-Rev05-All-Policies.pdf</pre>
+        <div class="prompt-actions">
+          <a class="link-btn" href="https://diabengineering.com.au/wp-content/uploads/2019/02/HSE-MAN-001-001-DIAB-Engineering-Policy-Manual-Rev05-All-Policies.pdf" target="_blank" rel="noopener">
+            Open link <span class="arrow">↗</span>
+          </a>
+          <button class="link-btn" type="button" data-download="https://diabengineering.com.au/wp-content/uploads/2019/02/HSE-MAN-001-001-DIAB-Engineering-Policy-Manual-Rev05-All-Policies.pdf" data-filename="policy_manual_diabengineering.pdf">
+            Download PDF <span class="arrow">↗</span>
+          </button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 26 <span class="prompt-meta">Build the HTML app</span></summary>
+        <pre class="code" id="p26">I previously asked you to find appropriate holiday gifts for 3 different
+people with specific budgets and constraints. Now I need you to create an
+interactive HTML Gift Recommendation Dashboard to visualize those
+recommendations.
+
+ORIGINAL GIFT REQUEST:
+I need to find appropriate holiday gifts for 3 different people:
+1. A colleague who loves tech gadgets (budget $40-70)
+2. A senior client who wants thoughtful, professional gifts (budget $80-120)
+3. A new team member who enjoys cooking and creative hobbies (budget $25-50)
+Please:
+- Use my company policy guidelines from our RAG collection
+- Follow the budget rules strictly
+- For each person, give 3 gift options
+- Include JSON output with:
+  - gift_name
+  - price
+  - category
+  - reason
+  - policy_alignment
+Make sure recommendations do not violate any company rules, If there are no
+Gift-Giving Guidelines in this document, please let me know, I will provide
+another updated one.
+
+NOW CREATE AN HTML APP:
+Build a single HTML file with embedded CSS and JavaScript that displays:
+1. Header section (title, subtitle, holiday theme)
+2. Recipient cards (3) with budgets and 3 gift options each
+3. Gift details: name, price, category badge, reason, compliance indicator
+4. Budget tracker with progress bars
+5. Optional filtering/sorting and click-to-expand
+6. Festive but corporate styling, responsive, print-friendly
+7. Summary section and optional export/print
+
+OUTPUT:
+Complete, working HTML file with embedded CSS and JavaScript.</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p26">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 27 <span class="prompt-meta">Selection + email + brand kit</span></summary>
+        <pre class="code" id="p27">modify the html so that I can click on the option, one choice per column/ individual, so that when the gift is selected the budget used updates with the price of that product/ gift only, and there is a button in addition, where you can click after selection, to forward in an email where you need to inform the email address and the name of the person, object plus description about Happy Holidays, here is you gift card, thank you !
+
+Open the generated email writing to google account directly, and instead of the original colors use my company branding kit that you can find here: https://h2o.ai/company/brand-kit/</pre>
+        <div class="prompt-actions">
+          <button class="link-btn" type="button" data-copy="#p27">Copy</button>
+        </div>
+      </details>
+
+      <details class="prompt">
+        <summary>Slide 29 <span class="prompt-meta">Quiz link</span></summary>
+        <pre class="code" id="p29">https://www.classmarker.com/online-test/start/?quiz=6kk693b055cdcb23</pre>
+        <div class="prompt-actions">
+          <a class="link-btn" href="https://www.classmarker.com/online-test/start/?quiz=6kk693b055cdcb23" target="_blank" rel="noopener">
+            Open quiz <span class="arrow">↗</span>
+          </a>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- jsPDF (for prompts download) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    // Tap feedback
+    document.querySelectorAll(".btn, .link-btn, .badge").forEach(function (btn) {
+      btn.addEventListener("pointerdown", function () {
+        btn.style.transform = "translateY(0px) scale(0.99)";
+        setTimeout(function () { btn.style.transform = ""; }, 120);
+      });
+    });
+
+    // Jump ahead to demo (22:07) inside the same embed
+    (function () {
+      const jumpBtn = document.getElementById("jumpDemo");
+      const player = document.getElementById("webinarPlayer");
+      if (!jumpBtn || !player) return;
+
+      const base = "https://www.youtube.com/embed/RCsjmUjXLcw";
+      const startSeconds = 22 * 60 + 7;
+
+      jumpBtn.addEventListener("click", function () {
+        const u = new URL(base);
+        u.searchParams.set("start", String(startSeconds));
+        u.searchParams.set("autoplay", "1");
+        player.setAttribute("src", u.toString());
+        player.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    })();
+
+    // Copy buttons
+    document.querySelectorAll("[data-copy]").forEach(function (b) {
+      b.addEventListener("click", async function () {
+        const sel = b.getAttribute("data-copy");
+        const el = document.querySelector(sel);
+        if (!el) return;
+        try{
+          await navigator.clipboard.writeText(el.textContent);
+          const old = b.textContent;
+          b.textContent = "Copied";
+          setTimeout(function(){ b.textContent = old; }, 900);
+        }catch(e){
+          const ta = document.createElement("textarea");
+          ta.value = el.textContent;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          ta.remove();
+        }
+      });
+    });
+
+    // Download external PDFs (Slides 22 and 25)
+    document.querySelectorAll("[data-download]").forEach(function (b) {
+      b.addEventListener("click", async function () {
+        const url = b.getAttribute("data-download");
+        const filename = b.getAttribute("data-filename") || "document.pdf";
+        if (!url) return;
+
+        try{
+          const res = await fetch(url, { mode: "cors" });
+          if (!res.ok) throw new Error("Fetch failed");
+          const blob = await res.blob();
+          const a = document.createElement("a");
+          const objUrl = URL.createObjectURL(blob);
+          a.href = objUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(objUrl);
+        }catch(e){
+          window.open(url, "_blank", "noopener");
+        }
+      });
+    });
+
+    // Download prompts as PDF
+    (function () {
+      const btn = document.getElementById("downloadPromptsPdf");
+      if (!btn) return;
+
+      function collectPrompts() {
+        const items = [];
+        document.querySelectorAll("details.prompt").forEach((d) => {
+          const slide = (d.querySelector("summary")?.innerText || "").trim().split("\n")[0];
+          const pre = d.querySelector("pre.code");
+          const text = (pre?.textContent || "").trim();
+          if (slide && text) items.push({ slide, text });
+        });
+        return items;
+      }
+
+      btn.addEventListener("click", async function () {
+        const jspdf = window.jspdf;
+        const jsPDF = jspdf && jspdf.jsPDF;
+        if (!jsPDF) {
+          alert("PDF generator failed to load. Try again.");
+          return;
+        }
+
+        const doc = new jsPDF({ unit: "pt", format: "a4" });
+        const margin = 44;
+        const pageW = doc.internal.pageSize.getWidth();
+        const pageH = doc.internal.pageSize.getHeight();
+        const maxW = pageW - margin * 2;
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(16);
+        doc.text("Holiday Agents Demo - Prompts Pack", margin, 64);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(10);
+        doc.text("Copy-paste ready prompts by slide.", margin, 84);
+
+        let y = 110;
+        const prompts = collectPrompts();
+
+        for (const p of prompts) {
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(12);
+
+          const titleLines = doc.splitTextToSize(p.slide, maxW);
+          const titleH = titleLines.length * 14;
+
+          if (y + titleH + 20 > pageH - margin) { doc.addPage(); y = 64; }
+          doc.text(titleLines, margin, y);
+          y += titleH + 8;
+
+          doc.setFont("courier", "normal");
+          doc.setFontSize(9);
+
+          const codeLines = doc.splitTextToSize(p.text, maxW);
+          const lineH = 11;
+          const boxPad = 10;
+          const boxH = codeLines.length * lineH + boxPad * 2;
+
+          if (y + boxH + 18 > pageH - margin) { doc.addPage(); y = 64; }
+
+          doc.setDrawColor(210);
+          doc.setFillColor(245, 246, 248);
+          doc.rect(margin, y, maxW, boxH, "FD");
+          doc.text(codeLines, margin + boxPad, y + boxPad + 8);
+
+          y += boxH + 18;
+        }
+
+        doc.save("holiday_agent_prompts_pack.pdf");
+      });
+    })();
+
+    // PDF.js single-page viewer (fit-to-width), start on page 5
+    (function () {
+      const relUrl = "Presentation%20Slides%20-%20Create%20Your%20Own%20AI%20Agent%20with%20h2oGPTe.pdf";
+      const pdfUrl = new URL(relUrl, window.location.href).href;
+
+      const canvas = document.getElementById("pdfCanvas");
+      const wrap = document.getElementById("pdfCanvasWrap");
+      const ctx = canvas.getContext("2d");
+
+      const pageStat = document.getElementById("pageStat");
+      const prevBtn = document.getElementById("prevPage");
+      const nextBtn = document.getElementById("nextPage");
+      const pdfError = document.getElementById("pdfError");
+
+      let pdfDoc = null;
+      let pageNum = 5;
+      let pageCount = 0;
+
+      let fitScale = 1.0;
+      let rendering = false;
+      let pendingPage = null;
+
+      function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+
+      function setStat() {
+        if (!pageCount) pageStat.textContent = "Loading…";
+        else pageStat.textContent = "Page " + pageNum + " / " + pageCount;
+      }
+
+      async function computeFitScale(page) {
+        const base = page.getViewport({ scale: 1 });
+        const availW = Math.max(320, wrap.clientWidth - 32);
+        const s = availW / base.width;
+        return clamp(s, 0.7, 2.2);
+      }
+
+      async function renderPage(num) {
+        rendering = true;
+        pdfError.style.display = "none";
+
+        const page = await pdfDoc.getPage(num);
+        fitScale = await computeFitScale(page);
+
+        const viewport = page.getViewport({ scale: fitScale });
+
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(viewport.width * dpr);
+        canvas.height = Math.floor(viewport.height * dpr);
+        canvas.style.width = Math.floor(viewport.width) + "px";
+        canvas.style.height = Math.floor(viewport.height) + "px";
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        rendering = false;
+        setStat();
+
+        if (pendingPage !== null) {
+          const p = pendingPage;
+          pendingPage = null;
+          renderPage(p);
+        }
+      }
+
+      function queueRender(num) {
+        if (rendering) pendingPage = num;
+        else renderPage(num);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        if (!pdfDoc || pageNum <= 1) return;
+        pageNum--;
+        queueRender(pageNum);
+      });
+
+      nextBtn.addEventListener("click", function () {
+        if (!pdfDoc || pageNum >= pageCount) return;
+        pageNum++;
+        queueRender(pageNum);
+      });
+
+      let resizeTimer = null;
+      window.addEventListener("resize", function () {
+        if (!pdfDoc) return;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () { queueRender(pageNum); }, 140);
+      });
+
+      setStat();
+
+      if (!window.pdfjsLib) {
+        pageStat.textContent = "PDF viewer failed to load.";
+        pdfError.style.display = "block";
+        return;
+      }
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+      pdfjsLib.getDocument({ url: pdfUrl }).promise.then(function (pdf) {
+        pdfDoc = pdf;
+        pageCount = pdf.numPages;
+
+        if (pageNum < 1) pageNum = 1;
+        if (pageNum > pageCount) pageNum = 1;
+
+        setStat();
+        renderPage(pageNum);
+      }).catch(function () {
+        pageStat.textContent = "PDF failed to load.";
+        pdfError.style.display = "block";
+      });
+    })();
+  </script>
+</body>
+</html>
