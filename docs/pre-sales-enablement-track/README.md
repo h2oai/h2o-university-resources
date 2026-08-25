@@ -6,7 +6,7 @@ reference guides for use during live customer calls.
 
 H2O.ai University.
 
-*Live site:** [h2oai.github.io/h2o-university-resources/pre-sales-enablement-track](https://h2oai.github.io/h2o-university-resources/pre-sales-enablement-track/)
+**Live site:** [h2oai.github.io/h2o-university-resources/pre-sales-enablement-track](https://h2oai.github.io/h2o-university-resources/pre-sales-enablement-track/)
 
 ## What is here
 
