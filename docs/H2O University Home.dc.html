@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/colors.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/typography.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/effects.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/base.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/styles.css">
+<script src="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: var(--font-body, Inter), sans-serif; }
+  a { color: #000000; text-decoration: none; }
+  a:hover { color: #4D4D4D; }
+  .lu { display: inline-flex; align-items: center; justify-content: center; }
+  .lu svg { width: 100%; height: 100%; display: block; stroke-width: 1.75; }
+  @keyframes h2oRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="background: #FFFFFF; color: #000000; min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid #E6E6E6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 28px;">
+      <div style="display: flex; align-items: center; gap: 18px; flex-shrink: 0;">
+        <a href="https://h2o.ai/" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+          <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/master/_jcr_content/root/container/header_copy/logo.coreimg.svg/1782337746232/h2o-logo.svg" alt="H2O.ai" style="height: 26px; display: block;">
+        </a>
+        <span style="width: 1px; height: 26px; background: #E6E6E6;"></span>
+        <a href="#top" style="display: flex; align-items: center;">
+          <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/university/_jcr_content/root/container/header_copy_copy/logo-secondary.coreimg.svg/1784442620482/uni-logo-plain.svg" alt="H2O.ai University" style="height: 24px; display: block;">
+        </a>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 30px; margin-left: auto; flex-wrap: wrap;">
+        <a href="H2O University Home.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid #FFDD00;">Home</a>
+        <a href="H2O University Courses.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">Courses</a>
+        <a href="H2O University Learning Paths.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">Learning paths</a>
+        <a href="H2O University FAQ.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">FAQ</a>
+        <a href="H2O University Partners.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: #FFDD00; color: #000000; padding: 10px 20px; border-radius: 999px;" style-hover="background: #E6C700;">Partner portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position: relative; padding: 84px 32px 72px; background: #FFFFFF;">
+    <div style="position: absolute; top: 0; right: 0; max-width: 100%; overflow: hidden; pointer-events: none;">
+      <sc-if value="{{ showDecor }}" hint-placeholder-val="{{ true }}">
+        <div style="width: 504px; height: 112px; background-repeat: no-repeat; background-image: linear-gradient(#FFDD00,#FFDD00), linear-gradient(#FFF3A3,#FFF3A3), linear-gradient(#FFDD00,#FFDD00), linear-gradient(#F2F2F2,#F2F2F2); background-size: 112px 112px, 56px 56px, 56px 56px, 56px 56px; background-position: 392px 0, 336px 0, 336px 56px, 280px 0;"></div>
+      </sc-if>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; display: grid; grid-template-columns: minmax(320px, 1.15fr) minmax(260px, 0.85fr); gap: 56px; align-items: center;">
+      <div>
+        <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 20px; font-weight: 500;">H2O.ai University · Free &amp; hands-on</p>
+        <h1 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; letter-spacing: -0.025em; font-size: clamp(38px, 4.6vw, 62px); line-height: 1.05; margin: 0 0 22px; text-wrap: balance;">{{ headline }}</h1>
+        <p style="font-size: 18px; line-height: 1.6; color: #4D4D4D; max-width: 52ch; margin: 0 0 32px;">Learn the platform enterprises actually run on. Structured courses on h2oGPTe, Driverless AI, and agentic workflows — practice in real environments and validate your skills with certification.</p>
+
+        <div style="position: relative; max-width: 520px;">
+          <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1.5px solid #000000; border-radius: 999px; padding: 12px 20px; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06));">
+            <span class="lu" data-icon="search" style="width: 20px; height: 20px; color: #6B6B6B; flex-shrink: 0;"></span>
+            <input type="text" placeholder="Search courses, tools, topics…" value="{{ query }}" onChange="{{ onQuery }}" onFocus="{{ onFocus }}" style="border: none; outline: none; flex: 1; font-family: var(--font-body, Inter), sans-serif; font-size: 15px; color: #000000; background: transparent; min-width: 0;">
+            <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ clearQuery }}" style="border: none; background: #F9F9F9; width: 26px; height: 26px; border-radius: 999px; cursor: pointer; color: #4D4D4D; font-size: 14px; line-height: 1; flex-shrink: 0;">×</button>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ showResults }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; box-shadow: var(--shadow-lg, 0 18px 40px rgba(0,0,0,0.12)); padding: 8px; z-index: 40; max-height: 340px; overflow-y: auto; animation: h2oRise 160ms cubic-bezier(0.4,0,0.2,1);">
+              <sc-for list="{{ results }}" as="hit" hint-placeholder-count="3">
+                <button onClick="{{ hit.open }}" style="display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; border: none; background: transparent; padding: 12px 14px; border-radius: 12px; cursor: pointer;" style-hover="background: #F9F9F9;">
+                  <span class="lu" data-icon="{{ hit.icon }}" style="width: 34px; height: 34px; border-radius: 8px; background: #FFFAE0; color: #000000; padding: 8px; flex-shrink: 0;"></span>
+                  <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                    <span style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 14px; color: #000000;">{{ hit.title }}</span>
+                    <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B;">{{ hit.meta }}</span>
+                  </span>
+                </button>
+              </sc-for>
+              <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; padding: 18px 14px; font-size: 14px; color: #6B6B6B;">No courses match that yet. Try “agents”, “h2oGPTe”, or “Driverless AI”.</p>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center;">
+            <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #808080; margin-right: 4px;">Popular</span>
+            <sc-for list="{{ topics }}" as="topic" hint-placeholder-count="5">
+              <button onClick="{{ topic.pick }}" style="border: 1px solid #E6E6E6; background: #FFFFFF; border-radius: 999px; padding: 7px 14px; font-family: var(--font-body, Inter), sans-serif; font-size: 12.5px; color: #4D4D4D; cursor: pointer;" style-hover="background: #F9F9F9; border-color: #CFCFCF;">{{ topic.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 28px;">
+        <img src="https://h2o.ai/university/_jcr_content/root/container/section_240090213/par/wrappercomponent_306/par/advancedcolumncontro/columns0/image.coreimg.svg/1784749425476/h2ouniversity-horizontallogo-lightbackground-1.svg" alt="H2O.ai University" style="width: 100%; max-width: 380px; display: block;">
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%;">
+          <a href="H2O University Courses.dc.html" style="border-left: 3px solid #FFDD00; padding: 4px 0 4px 14px; display: block; color: inherit;">
+            <p style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 26px; margin: 0;">18</p>
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B; margin: 4px 0 0;">Courses</p>
+          </a>
+          <a href="H2O University Learning Paths.dc.html" style="border-left: 3px solid #E6E6E6; padding: 4px 0 4px 14px; display: block; color: inherit;">
+            <p style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 26px; margin: 0;">5</p>
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B; margin: 4px 0 0;">Learning paths</p>
+          </a>
+          <div style="border-left: 3px solid #E6E6E6; padding: 4px 0 4px 14px;">
+            <p style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 26px; margin: 0;">70%</p>
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6B6B; margin: 4px 0 0;">To certify</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #000000; color: #FFFFFF; padding: 64px 32px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr); gap: 56px; align-items: center;">
+      <div>
+        <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(30px, 3vw, 44px); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 18px;">Learn. Practice. Scale.</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #CFCFCF; margin: 0 0 26px; max-width: 44ch;">Two minutes on how H2O.ai University works — what you'll build, how the labs run, and how certification is scored.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="H2O University Courses.dc.html" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; background: #FFDD00; color: #000000; padding: 13px 24px; border-radius: 999px;" style-hover="background: #E6C700;">View courses</a>
+          <a href="#cert" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; border: 1.5px solid #FFFFFF; color: #FFFFFF; padding: 13px 24px; border-radius: 999px;" style-hover="background: #2E2E2E;">Get certified</a>
+        </div>
+      </div>
+      <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #2E2E2E; aspect-ratio: 16 / 9; background: #1A1A1A;">
+        <iframe src="https://www.youtube.com/embed/XDgngH6Vf74" title="H2O.ai University" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen="true" style="width: 100%; height: 100%; border: 0; display: block;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" style="padding: 88px 32px; background: #FFFFFF;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 14px;">What we offer</p>
+      <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); letter-spacing: -0.02em; margin: 0 0 44px; max-width: 30ch; line-height: 1.12;">Training built to be used on Monday morning</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; padding: 34px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06));">
+          <img src="https://h2o.ai/university/_jcr_content/root/container/section/par/advancedcolumncontro/columns0/wrappercomponent/par/image.coreimg.png/1784749425996/rocket-small.png" alt="" style="height: 58px; width: auto; align-self: flex-start; display: block;">
+          <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 21px; margin: 0;">Training programs</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #4D4D4D; margin: 0;">Master our AI tools through guided, hands-on tutorials — from your first model in a few clicks to production pipelines.</p>
+          <a href="H2O University Courses.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; border-bottom: 2px solid #FFDD00; align-self: flex-start; padding-bottom: 3px; margin-top: 6px;">Browse catalog</a>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; padding: 34px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06));">
+          <img src="https://h2o.ai/university/_jcr_content/root/container/section/par/advancedcolumncontro/columns1/wrappercomponent_cop/par/image.coreimg.svg/1784749426163/badge-v5.svg" alt="" style="height: 58px; width: auto; align-self: flex-start; display: block;">
+          <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 21px; margin: 0;">Certifications</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #4D4D4D; margin: 0;">Demonstrate your expertise with a quiz score of 70% or higher, and show that you too are an H2O.ai maker.</p>
+          <a href="#tracks" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; border-bottom: 2px solid #FFDD00; align-self: flex-start; padding-bottom: 3px; margin-top: 6px;">Get certified</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks" style="padding: 88px 32px; background: #F9F9F9; border-top: 1px solid #E6E6E6; border-bottom: 1px solid #E6E6E6;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 34px;">
+        <div>
+          <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 14px;">Curated AI skill tracks</p>
+          <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); letter-spacing: -0.02em; margin: 0; line-height: 1.12;">Pick a track, follow it end to end</h2>
+        </div>
+        <p style="font-size: 15px; color: #4D4D4D; margin: 0; max-width: 34ch; line-height: 1.6;">Each track is an ordered set of courses — start anywhere, but the sequence is designed to build on itself.</p>
+      </div>
+
+      <div style="display: flex; gap: 6px; border-bottom: 1px solid #E6E6E6; margin-bottom: 32px; flex-wrap: wrap;">
+        <sc-for list="{{ tracks }}" as="tab" hint-placeholder-count="3">
+          <button onClick="{{ tab.pick }}" style="border: none; background: transparent; cursor: pointer; padding: 14px 20px 12px; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 15px; color: {{ tab.color }}; border-bottom: 3px solid {{ tab.underline }}; display: flex; align-items: center; gap: 10px;">
+            <span class="lu" data-icon="{{ tab.icon }}" style="width: 17px; height: 17px;"></span>
+            {{ tab.label }}
+            <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; color: #808080; letter-spacing: 0.06em;">{{ tab.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(288px, 1fr)); gap: 22px;">
+        <sc-for list="{{ trackCourses }}" as="c" hint-placeholder-count="4">
+          <div onClick="{{ c.open }}" style="background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06)); transition: transform 200ms cubic-bezier(0.4,0,0.2,1), box-shadow 200ms cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden;" style-hover="transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.10); border-color: #CFCFCF;">
+            <span style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: {{ c.strip }};"></span>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+              <span class="lu" data-icon="{{ c.icon }}" style="width: 42px; height: 42px; border-radius: 10px; background: #FFFAE0; color: #000000; padding: 10px; flex-shrink: 0;"></span>
+              <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #4D4D4D; border: 1px solid #E6E6E6; border-radius: 4px; padding: 5px 8px; white-space: nowrap;">{{ c.product }}</span>
+            </div>
+            <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 17.5px; line-height: 1.3; margin: 0; text-wrap: pretty;">{{ c.title }}</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #6B6B6B; margin: 0; flex: 1;">{{ c.blurb }}</p>
+            <div style="display: flex; align-items: center; gap: 14px; padding-top: 14px; border-top: 1px solid #EFEFEF; flex-wrap: wrap;">
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: {{ c.levelColor }}; font-weight: 700;">
+                <span style="width: 7px; height: 7px; border-radius: 999px; background: {{ c.levelColor }};"></span>{{ c.level }}
+              </span>
+              <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #808080;">{{ c.duration }}</span>
+              <span style="margin-left: auto; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px;">Preview <span class="lu" data-icon="arrow-right" style="width: 14px; height: 14px;"></span></span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top: 34px; display: flex; justify-content: center;">
+        <a href="H2O University Learning Paths.dc.html" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; border: 1.5px solid #000000; color: #000000; padding: 14px 28px; border-radius: 999px; background: #FFFFFF;" style-hover="background: #FFFFFF; border-color: #4D4D4D;">Explore all learning paths</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cert" style="padding: 88px 32px; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(300px, 1.3fr) minmax(220px, 0.7fr); gap: 56px; align-items: center;">
+      <div>
+        <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #FFDD00; margin: 0 0 16px; font-weight: 700;">Validate practical AI skills</p>
+        <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(28px, 3vw, 42px); letter-spacing: -0.02em; line-height: 1.12; margin: 0 0 20px;">Level up with H2O certification</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #CFCFCF; margin: 0 0 30px; max-width: 58ch;">Companies need professionals who can prove they can implement AI and get value from their data. Score <strong style="color: #FFFFFF;">70% or higher</strong> on a certification quiz and stand out as a proficient practitioner.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <button onClick="{{ startQuiz }}" style="border: none; cursor: pointer; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; background: #FFDD00; color: #000000; padding: 14px 26px; border-radius: 999px;" style-hover="background: #E6C700;">Take a sample quiz</button>
+          <a href="H2O University Courses.dc.html" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; border: 1.5px solid #FFFFFF; color: #FFFFFF; padding: 14px 26px; border-radius: 999px;" style-hover="background: #2E2E2E;">Browse catalog</a>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <img src="https://h2o.ai/university/_jcr_content/root/container/section_797149597/par/advancedcolumncontro/columns1/image.coreimg.png/1784749426791/certified-badge.png" alt="H2O Certified badge" style="width: 100%; max-width: 240px; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" style="padding: 88px 32px; background: #FFFFFF; position: relative;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; justify-content: space-between; margin-bottom: 40px;">
+        <div>
+          <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 14px;">Featured courses</p>
+          <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); letter-spacing: -0.02em; margin: 0; line-height: 1.12;">Newest on the platform</h2>
+        </div>
+        <a href="H2O University Courses.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; border-bottom: 2px solid #FFDD00; padding-bottom: 3px;">View all courses</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px;">
+        <sc-for list="{{ featured }}" as="c" hint-placeholder-count="3">
+          <div onClick="{{ c.open }}" style="background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06)); transition: transform 200ms cubic-bezier(0.4,0,0.2,1), box-shadow 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.10); border-color: #CFCFCF;">
+            <div style="background: #F9F9F9; border-bottom: 1px solid #E6E6E6; padding: 30px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+              <span class="lu" data-icon="{{ c.icon }}" style="width: 52px; height: 52px; color: #000000;"></span>
+              <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/banner/demo-banner-white/_jcr_content/root/container/section/par/wrappercomponent/par/section/par/image.coreimg.svg/1775198779124/h2o-cube.svg" alt="" style="height: 40px; opacity: 0.9; display: block;">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+              <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #4D4D4D; border: 1px solid #E6E6E6; border-radius: 4px; padding: 5px 8px; align-self: flex-start;">{{ c.product }}</span>
+              <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 18px; line-height: 1.3; margin: 0; text-wrap: pretty;">{{ c.title }}</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: #6B6B6B; margin: 0; flex: 1;">{{ c.blurb }}</p>
+              <div style="display: flex; align-items: center; gap: 14px; padding-top: 14px; border-top: 1px solid #EFEFEF;">
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: {{ c.levelColor }}; font-weight: 700;">
+                  <span style="width: 7px; height: 7px; border-radius: 999px; background: {{ c.levelColor }};"></span>{{ c.level }}
+                </span>
+                <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #808080;">{{ c.duration }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 84px 32px; background: #F9F9F9; border-top: 1px solid #E6E6E6;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
+      <div style="max-width: 58ch;">
+        <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/university/_jcr_content/root/container/header_copy_copy/logo-secondary.coreimg.svg/1784442620482/uni-logo-plain.svg" alt="H2O.ai University" style="height: 26px; display: block; margin-bottom: 22px;">
+        <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -0.02em; line-height: 1.14; margin: 0 0 16px;">Learn hands on</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #4D4D4D; margin: 0;">Follow structured learning paths designed to build real, production-ready AI skills. Learn at your own pace, practice on real environments, and validate your knowledge through certification.</p>
+      </div>
+      <a href="H2O University Learning Paths.dc.html" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; background: #FFDD00; color: #000000; padding: 16px 30px; border-radius: 999px;" style-hover="background: #E6C700;">Explore learning paths</a>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: #FFFFFF; padding: 60px 32px 34px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between; align-items: flex-start; padding-bottom: 34px; border-bottom: 1px solid #2E2E2E;">
+      <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/master/_jcr_content/root/container/header_copy/logo.coreimg.svg/1782337746232/h2o-logo.svg" alt="H2O.ai" style="height: 26px; display: block; filter: invert(1);">
+      <nav style="display: flex; flex-wrap: wrap; gap: 26px;">
+        <a href="H2O University Courses.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Courses</a>
+        <a href="H2O University Learning Paths.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Learning paths</a>
+        <a href="H2O University FAQ.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">FAQ</a>
+        <a href="https://h2o.ai/docs/" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Documentation</a>
+      </nav>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://www.youtube.com/user/0xdata"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/YouTube-gray.svg" alt="YouTube" style="height: 18px; display: block;"></a>
+        <a href="https://www.linkedin.com/company/h2oai/"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/Linkedin-gray.svg" alt="LinkedIn" style="height: 18px; display: block;"></a>
+        <a href="https://twitter.com/h2oai"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/X-gray.svg" alt="X" style="height: 18px; display: block;"></a>
+        <a href="https://github.com/h2oai"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/Github-gray.svg" alt="GitHub" style="height: 18px; display: block;"></a>
+      </div>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center;">
+      <p style="margin: 0; font-size: 12.5px; color: #808080;">Copyright © 2026 H2O.ai. All rights reserved.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+        <a href="#top" style="color: #808080; font-size: 12.5px;" style-hover="color: #FFFFFF;">Cookie preferences</a>
+        <a href="https://h2o.ai/legal/privacy/" style="color: #808080; font-size: 12.5px;" style-hover="color: #FFFFFF;">Privacy policy</a>
+        <a href="https://h2o.ai/legal/terms-of-use/" style="color: #808080; font-size: 12.5px;" style-hover="color: #FFFFFF;">Terms of use</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ hasModal }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 90; display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; overflow-y: auto;">
+      <div onClick="{{ stop }}" style="background: #FFFFFF; border-radius: 20px; max-width: 860px; width: 100%; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.3); animation: h2oRise 200ms cubic-bezier(0.4,0,0.2,1);">
+        <div style="background: #000000; color: #FFFFFF; padding: 32px 36px; display: flex; gap: 24px; align-items: flex-start;">
+          <span class="lu" data-icon="{{ modal.icon }}" style="width: 54px; height: 54px; border-radius: 12px; background: #FFDD00; color: #000000; padding: 13px; flex-shrink: 0;"></span>
+          <div style="flex: 1; min-width: 0;">
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #FFDD00; margin: 0 0 10px; font-weight: 700;">{{ modal.track }} · {{ modal.product }}</p>
+            <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 12px; text-wrap: pretty;">{{ modal.title }}</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #CFCFCF;">
+              <span>{{ modal.level }}</span>
+              <span>{{ modal.duration }}</span>
+              <span>Self-paced</span>
+              <span style="color: #FFDD00;">{{ modal.certLabel }}</span>
+            </div>
+          </div>
+          <button onClick="{{ closeModal }}" style="border: 1px solid #4D4D4D; background: transparent; color: #FFFFFF; width: 34px; height: 34px; border-radius: 999px; cursor: pointer; font-size: 16px; line-height: 1; flex-shrink: 0;" style-hover="background: #2E2E2E;">×</button>
+        </div>
+        <div style="padding: 32px 36px; display: grid; grid-template-columns: minmax(240px, 1fr) minmax(220px, 0.72fr); gap: 36px;">
+          <div>
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 12px;">About this course</p>
+            <p style="font-size: 15.5px; line-height: 1.7; color: #1A1A1A; margin: 0 0 24px;">{{ modal.blurb }}</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #F9F9F9; border-radius: 12px;">
+                <span class="lu" data-icon="clock" style="width: 17px; height: 17px; color: #4D4D4D; flex-shrink: 0;"></span>
+                <span style="font-size: 14px; color: #1A1A1A;">Self-paced · {{ modal.duration }}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #F9F9F9; border-radius: 12px;">
+                <span class="lu" data-icon="circle-check" style="width: 17px; height: 17px; color: #4D4D4D; flex-shrink: 0;"></span>
+                <span style="font-size: 14px; color: #1A1A1A;">Video lessons and quiz built into the course page</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #F9F9F9; border-radius: 12px;">
+                <span class="lu" data-icon="award" style="width: 17px; height: 17px; color: #4D4D4D; flex-shrink: 0;"></span>
+                <span style="font-size: 14px; color: #1A1A1A;">Score 70% or higher to certify</span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div style="background: #F9F9F9; border: 1px solid #E6E6E6; border-radius: 16px; padding: 22px;">
+              <p style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 16px; margin: 0 0 10px;">Certification included</p>
+              <p style="font-size: 13.5px; line-height: 1.6; color: #4D4D4D; margin: 0 0 16px;">Finish the course, then score 70% or higher on the quiz to earn your H2O Certified badge.</p>
+              <button onClick="{{ startQuiz }}" style="border: 1.5px solid #000000; background: #FFFFFF; color: #000000; cursor: pointer; width: 100%; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px; border-radius: 999px;" style-hover="background: #F9F9F9;">Preview the quiz</button>
+            </div>
+            <a href="{{ modal.url }}" target="_blank" style="display: block; text-align: center; background: #FFDD00; color: #000000; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px; border-radius: 999px;" style-hover="background: #E6C700;">Enroll free</a>
+            <p style="font-size: 12.5px; color: #808080; margin: 0; text-align: center;">No cost. No sales call. Just an account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ quizOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeQuiz }}" style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 95; display: flex; align-items: center; justify-content: center; padding: 32px 20px;">
+      <div onClick="{{ stop }}" style="background: #FFFFFF; border-radius: 20px; max-width: 620px; width: 100%; padding: 36px; box-shadow: 0 30px 70px rgba(0,0,0,0.3); animation: h2oRise 200ms cubic-bezier(0.4,0,0.2,1);">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px;">
+          <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B; margin: 0;">Certification quiz · {{ quizProgress }}</p>
+          <button onClick="{{ closeQuiz }}" style="border: 1px solid #E6E6E6; background: #FFFFFF; width: 32px; height: 32px; border-radius: 999px; cursor: pointer; font-size: 16px; line-height: 1; color: #4D4D4D;" style-hover="background: #F9F9F9;">×</button>
+        </div>
+        <div style="height: 6px; background: #EFEFEF; border-radius: 999px; overflow: hidden; margin-bottom: 28px;">
+          <div style="height: 100%; background: #FFDD00; width: {{ quizPct }}; transition: width 320ms cubic-bezier(0.16,1,0.3,1);"></div>
+        </div>
+        <sc-if value="{{ quizActive }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 21px; line-height: 1.3; margin: 0 0 24px; text-wrap: pretty;">{{ quizQuestion }}</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ quizOptions }}" as="opt" hint-placeholder-count="4">
+                <button onClick="{{ opt.choose }}" style="text-align: left; cursor: pointer; border: {{ opt.border }}; background: {{ opt.bg }}; padding: 16px 18px; border-radius: 12px; font-family: var(--font-body, Inter), sans-serif; font-size: 14.5px; color: #000000; display: flex; align-items: center; gap: 12px;">
+                  <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; color: #6B6B6B; flex-shrink: 0;">{{ opt.key }}</span>
+                  <span style="flex: 1;">{{ opt.label }}</span>
+                  <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; color: {{ opt.markColor }}; letter-spacing: 0.08em;">{{ opt.mark }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 26px;">
+              <p style="margin: 0; font-size: 13.5px; color: #6B6B6B;">{{ quizHint }}</p>
+              <sc-if value="{{ quizAnswered }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ quizNext }}" style="border: none; background: #FFDD00; color: #000000; cursor: pointer; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 999px;" style-hover="background: #E6C700;">{{ quizNextLabel }}</button>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ quizDone }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align: center; padding: 8px 0 4px;">
+            <img src="https://h2o.ai/university/_jcr_content/root/container/section_797149597/par/advancedcolumncontro/columns1/image.coreimg.png/1784749426791/certified-badge.png" alt="H2O Certified" style="width: 140px; display: block; margin: 0 auto 22px;">
+            <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 26px; margin: 0 0 12px;">{{ quizResultTitle }}</h3>
+            <p style="font-size: 15.5px; line-height: 1.6; color: #4D4D4D; margin: 0 0 26px;">{{ quizResultBody }}</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <button onClick="{{ restartQuiz }}" style="border: 1.5px solid #000000; background: #FFFFFF; color: #000000; cursor: pointer; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 999px;" style-hover="background: #F9F9F9;">Retake</button>
+              <button onClick="{{ closeQuiz }}" style="border: none; background: #FFDD00; color: #000000; cursor: pointer; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 999px;" style-hover="background: #E6C700;">Back to courses</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showChat }}" hint-placeholder-val="{{ true }}">
+    <div style="position: fixed; right: 24px; bottom: 24px; z-index: 80; display: flex; flex-direction: column; align-items: flex-end; gap: 14px;">
+      <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="width: 360px; max-width: calc(100vw - 48px); background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 18px; box-shadow: 0 22px 50px rgba(0,0,0,0.18); overflow: hidden; animation: h2oRise 180ms cubic-bezier(0.4,0,0.2,1);">
+          <div style="background: #000000; color: #FFFFFF; padding: 18px 20px; display: flex; align-items: center; gap: 12px;">
+            <span class="lu" data-icon="sparkles" style="width: 32px; height: 32px; border-radius: 8px; background: #FFDD00; color: #000000; padding: 7px; flex-shrink: 0;"></span>
+            <div style="flex: 1; min-width: 0;">
+              <p style="margin: 0; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 14.5px;">UniChat</p>
+              <p style="margin: 2px 0 0; font-family: var(--font-mono, DM Mono), monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #A6A6A6;">Your learning assistant</p>
+            </div>
+            <button onClick="{{ toggleChat }}" style="border: 1px solid #4D4D4D; background: transparent; color: #FFFFFF; width: 28px; height: 28px; border-radius: 999px; cursor: pointer; font-size: 14px; line-height: 1;" style-hover="background: #2E2E2E;">×</button>
+          </div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 12px; max-height: 300px; overflow-y: auto; background: #F9F9F9;">
+            <sc-for list="{{ chatLog }}" as="msg" hint-placeholder-count="2">
+              <div style="align-self: {{ msg.align }}; background: {{ msg.bg }}; color: {{ msg.color }}; border: {{ msg.border }}; border-radius: 14px; padding: 12px 14px; font-size: 14px; line-height: 1.55; max-width: 84%;">{{ msg.text }}</div>
+            </sc-for>
+          </div>
+          <div style="padding: 14px 16px; border-top: 1px solid #E6E6E6; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <sc-for list="{{ chatSuggestions }}" as="s" hint-placeholder-count="3">
+                <button onClick="{{ s.ask }}" style="border: 1px solid #E6E6E6; background: #FFFFFF; border-radius: 999px; padding: 6px 12px; font-size: 11.5px; color: #4D4D4D; cursor: pointer;" style-hover="background: #F9F9F9;">{{ s.label }}</button>
+              </sc-for>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; border: 1px solid #E6E6E6; border-radius: 999px; padding: 8px 8px 8px 16px;">
+              <input type="text" placeholder="Ask about a course…" value="{{ chatDraft }}" onChange="{{ onChatDraft }}" onKeyDown="{{ onChatKey }}" style="border: none; outline: none; flex: 1; font-family: var(--font-body, Inter), sans-serif; font-size: 13.5px; background: transparent; min-width: 0;">
+              <button onClick="{{ sendChat }}" style="border: none; background: #FFDD00; width: 32px; height: 32px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" style-hover="background: #E6C700;">
+                <span class="lu" data-icon="arrow-up" style="width: 15px; height: 15px; color: #000000;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <button onClick="{{ toggleChat }}" style="border: none; background: #000000; color: #FFFFFF; border-radius: 999px; cursor: pointer; padding: 15px 22px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 26px rgba(0,0,0,0.24); font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13.5px;" style-hover="background: #1A1A1A;">
+        <span class="lu" data-icon="message-circle" style="width: 18px; height: 18px; color: #FFDD00;"></span>
+        Ask UniChat
+      </button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Elevate your AI skills — free, hands-on, certified&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showDecorators&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showUniChat&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const LEVEL = { Beginner: '#1E874B', Intermediate: '#B7791F', Advanced: '#C0362C' };
+
+const CB = 'https://h2o.ai/university/courses/';
+
+const COURSES = [
+  { slug: 'large-language-models-level1', track: 'Generative AI', title: 'Large Language Models (LLMs) - Level 1', product: 'Foundations', level: 'Beginner', duration: '1h 20m', icon: 'brain-circuit',
+    blurb: 'A foundational understanding of language models and large language models, and where they apply.' },
+  { slug: 'an-in-depth-exploration-of-h2o-gpte', track: 'Generative AI', title: 'An In-depth Exploration of h2oGPTe', product: 'h2oGPTe', level: 'Intermediate', duration: '1h 45m', icon: 'workflow',
+    blurb: 'Hands-on training covering advanced features, Python integration, and AI app development with H2O Wave.' },
+  { slug: 'h2o-generative-ai-starter-track', track: 'Generative AI', title: 'H2O Generative AI Starter Track', product: 'h2oGPTe', level: 'Intermediate', duration: '1h 29m', icon: 'sparkles',
+    blurb: 'The practical applications of Generative AI technology using h2oGPTe.' },
+  { slug: 'ecosystem-overview-level1', track: 'Generative AI', title: 'H2O Gen AI Ecosystem Overview - Level 1', product: 'Platform', level: 'Beginner', duration: '6h 36m', icon: 'layout-grid',
+    blurb: 'Addresses diverse business challenges using H2O.ai tools, with concrete solutions and case studies.' },
+  { slug: 'large-language-models-level2', track: 'Generative AI', title: 'Large Language Models (LLMs) - Level 2', product: 'H2O LLM Studio', level: 'Intermediate', duration: '1h 58m', icon: 'sliders-horizontal',
+    blurb: 'Advanced data preparation and fine-tuning using large language models.' },
+
+  { slug: 'data-prep-for-h2o-driverless-ai', track: 'Predictive AI', title: 'Data Prep for H2O Driverless AI', product: 'H2O Driverless AI', level: 'Beginner', duration: '1h 11m', icon: 'database',
+    blurb: 'Part of the certification program — the skills to effectively use H2O Driverless AI, starting with data.' },
+  { slug: 'driverless-ai-starter-course', track: 'Predictive AI', title: 'Driverless AI Starter Course', product: 'H2O Driverless AI', level: 'Beginner', duration: '2h 10m', icon: 'trending-up',
+    blurb: 'Automate data science workflows and master the machine learning steps, with assignments and a certificate.' },
+  { slug: 'h2o-label-genie-starter-course', track: 'Predictive AI', title: 'H2O Label Genie Starter Course', product: 'H2O Label Genie', level: 'Beginner', duration: '1h 10m', icon: 'tags',
+    blurb: 'Model-assisted data labeling to build higher-quality training sets faster.' },
+  { slug: 'hydrogen-torch-starter-course', track: 'Predictive AI', title: 'Hydrogen Torch Starter Course', product: 'H2O Hydrogen Torch', level: 'Beginner', duration: '1h 48m', icon: 'layers',
+    blurb: 'Train deep learning models on image, text, and audio data without writing training loops.' },
+  { slug: 'h2o-wave-starter-course', track: 'Predictive AI', title: 'H2O Wave Starter Course', product: 'H2O Wave', level: 'Beginner', duration: '1h 55m', icon: 'app-window',
+    blurb: 'Build interactive, real-time AI apps in Python with the H2O Wave framework.' },
+
+  { slug: 'h2o-ai-agents-from-theory-to-practice', track: 'Agentic AI', title: 'H2O.ai Agents : Theory to Practice', product: 'h2oGPTe', level: 'Intermediate', duration: '1h 9m', icon: 'bot',
+    blurb: 'Agentic workflows, automation, and real-world use cases with H2O Generative AI.' },
+  { slug: 'build-practical-ai-agents-with-h2ogpte', track: 'Agentic AI', title: 'Build Practical AI Agents with h2oGPTe', product: 'h2oGPTe', level: 'Beginner', duration: '1h 22m', icon: 'workflow',
+    blurb: 'Build working agents on h2oGPTe — connect tools and data, then put them to work on practical tasks.' },
+  { slug: 'ecosystem-overview-level2', track: 'Agentic AI', title: 'H2O Gen AI Ecosystem Overview - Level 2', product: 'Platform', level: 'Intermediate', duration: '1h 24m', icon: 'sparkles',
+    blurb: 'The tools, applications, and methodologies H2O.ai offers across AI and ML.' },
+];
+
+const FEATURED = [
+  { slug: 'getting-started-with-tabular-foundation-models', track: 'Predictive AI', title: 'Getting Started with Tabular Foundation Models', product: 'TabH2O', level: 'Beginner', duration: '1h 30m', icon: 'table-2',
+    blurb: 'An introduction to tabular foundation models and how they apply to prediction on structured data.' },
+  { slug: 'getting-started-with-h2o-ai-managed-cloud', track: 'Platform', title: 'Getting Started with H2O.ai Managed Cloud', product: 'Managed Cloud', level: 'Beginner', duration: 'Self-paced', icon: 'cloud',
+    blurb: 'A walkthrough of the H2O.ai Managed Cloud environment and how to get started working in it.' },
+  { slug: 'the-ai-lifecycle-with-the-h2o-ai-platform--from-data-to-producti', track: 'Platform', title: 'The AI Lifecycle with the H2O.ai Platform', product: 'Platform', level: 'Intermediate', duration: '1h 05m', icon: 'refresh-cw',
+    blurb: 'Follow a use case across the platform, from raw data through to a model running in production.' },
+];
+
+const TRACKS = [
+  { id: 'Generative AI', label: 'Generative AI', icon: 'sparkles' },
+  { id: 'Predictive AI', label: 'Predictive AI', icon: 'trending-up' },
+  { id: 'Agentic AI', label: 'Agentic AI', icon: 'bot' },
+];
+
+const QUIZ = [
+  { q: 'What does retrieval-augmented generation (RAG) primarily solve?',
+    options: ['It makes the model train faster', 'It grounds model answers in your own documents', 'It compresses the model for edge devices', 'It replaces the need for prompts'], answer: 1,
+    hint: 'Grounding is about where the answer comes from, not how fast it arrives.' },
+  { q: 'In H2O Driverless AI, what does the experiment leaderboard rank?',
+    options: ['Users by number of experiments', 'Candidate models by validation score', 'Datasets by row count', 'Features by cardinality'], answer: 1,
+    hint: 'Think about what you compare at the end of an AutoML run.' },
+  { q: 'What is the minimum score to earn an H2O.ai University certification?',
+    options: ['50%', '60%', '70%', '90%'], answer: 2,
+    hint: 'The same number appears on the certification band above.' },
+];
+
+const CHAT_REPLIES = {
+  'Which course should I start with?': 'If you are new, start with “Large Language Models (LLMs) - Level 1” (1h 20m, Beginner) for the concepts, then “H2O Generative AI Starter Track” to apply them in h2oGPTe.',
+  'How do certifications work?': 'Finish a course, then take its quiz. Score 70% or higher and you earn an H2O Certified badge you can share on LinkedIn. Retakes are free.',
+  'Is any of this free?': 'All H2O.ai University courses and certifications are free. You only need an account to track progress and claim badges.',
+};
+
+class Component extends DCLogic {
+  state = {
+    track: 'Generative AI', query: '', focused: false, modal: null,
+    quizOpen: false, quizIndex: 0, picked: null, score: 0, quizDone: false,
+    chatOpen: false, chatDraft: '',
+    chatLog: [{ from: 'bot', text: 'Hi — I am UniChat. Ask me which course fits your role, or how certification works.' }],
+  };
+
+  componentDidMount() { this.icons(); }
+  componentDidUpdate() { this.icons(); }
+  icons() {
+    if (!window.lucide) return;
+    const nodes = document.querySelectorAll('.lu[data-icon]');
+    let dirty = false;
+    nodes.forEach(el => {
+      const name = el.getAttribute('data-icon');
+      const svg = el.firstElementChild;
+      if (svg && svg.tagName.toLowerCase() === 'svg' && svg.classList.contains('lucide-' + name)) return;
+      el.innerHTML = '<i data-lucide="' + name + '"></i>';
+      dirty = true;
+    });
+    if (dirty) { try { window.lucide.createIcons(); } catch (e) {} }
+  }
+
+  all() { return COURSES.concat(FEATURED); }
+
+  card = (c) => ({
+    ...c,
+    icon: c.icon,
+    levelColor: LEVEL[c.level] || '#6B6B6B',
+    strip: c.track === 'Agentic AI' ? '#000000' : c.track === 'Predictive AI' ? '#CFCFCF' : '#FFDD00',
+    open: () => this.setState({ modal: c, focused: false }),
+  });
+
+  renderVals() {
+    const s = this.state;
+    const q = s.query.trim().toLowerCase();
+    const hits = q ? this.all().filter(c =>
+      (c.title + ' ' + c.blurb + ' ' + c.product + ' ' + c.track).toLowerCase().includes(q)
+    ).slice(0, 6) : [];
+
+    const m = s.modal;
+    const qz = QUIZ[s.quizIndex];
+    const lastQ = s.quizIndex === QUIZ.length - 1;
+
+    return {
+      headline: this.props.headline ?? 'Elevate your AI skills — free, hands-on, certified',
+      showDecor: this.props.showDecorators ?? true,
+      showChat: this.props.showUniChat ?? true,
+
+      topics: ['Generative AI', 'Agents', 'h2oGPTe', 'Driverless AI'].map(label => ({
+        label, pick: () => this.setState({ query: label, focused: true }),
+      })),
+      query: s.query, hasQuery: q.length > 0,
+      onQuery: (e) => this.setState({ query: e.target.value, focused: true }),
+      onFocus: () => this.setState({ focused: true }),
+      clearQuery: () => this.setState({ query: '', focused: false }),
+      showResults: s.focused && q.length > 0,
+      noResults: s.focused && q.length > 0 && hits.length === 0,
+      results: hits.map(c => ({
+        title: c.title, icon: c.icon, meta: c.track + ' · ' + c.level + ' · ' + c.duration,
+        open: () => this.setState({ modal: c, query: '', focused: false }),
+      })),
+
+      offers: [
+        { title: 'Training programs', cta: 'Browse catalog',
+          img: 'https://h2o.ai/university/_jcr_content/root/container/section/par/advancedcolumncontro/columns0/wrappercomponent/par/image.coreimg.png/1784749425996/rocket-small.png',
+          body: 'Master our AI tools through guided, hands-on tutorials — from your first model in a few clicks to production pipelines.' },
+        { title: 'Certifications', cta: 'Get certified',
+          img: 'https://h2o.ai/university/_jcr_content/root/container/section/par/advancedcolumncontro/columns1/wrappercomponent_cop/par/image.coreimg.svg/1784749426163/badge-v5.svg',
+          body: 'Demonstrate your expertise with a quiz score of 70% or higher, and show that you too are an H2O.ai maker.' },
+      ],
+
+      tracks: TRACKS.map(t => ({
+        ...t,
+        count: String(COURSES.filter(c => c.track === t.id).length).padStart(2, '0'),
+        color: s.track === t.id ? '#000000' : '#6B6B6B',
+        underline: s.track === t.id ? '#FFDD00' : 'transparent',
+        pick: () => this.setState({ track: t.id }),
+      })),
+      trackCourses: COURSES.filter(c => c.track === s.track).map(this.card),
+      featured: FEATURED.map(this.card),
+
+      hasModal: !!m,
+      closeModal: () => this.setState({ modal: null }),
+      stop: (e) => e.stopPropagation(),
+      modal: m ? { ...m, certLabel: 'Certification included', url: CB + m.slug + '/' } : {},
+
+      startQuiz: () => this.setState({ quizOpen: true, quizIndex: 0, picked: null, score: 0, quizDone: false }),
+      closeQuiz: () => this.setState({ quizOpen: false }),
+      restartQuiz: () => this.setState({ quizIndex: 0, picked: null, score: 0, quizDone: false }),
+      quizOpen: s.quizOpen,
+      quizActive: !s.quizDone,
+      quizDone: s.quizDone,
+      quizProgress: s.quizDone ? 'Result' : 'Question ' + (s.quizIndex + 1) + ' of ' + QUIZ.length,
+      quizPct: s.quizDone ? '100%' : Math.round((s.quizIndex / QUIZ.length) * 100) + '%',
+      quizQuestion: qz ? qz.q : '',
+      quizAnswered: s.picked !== null,
+      quizNextLabel: lastQ ? 'See result' : 'Next question',
+      quizHint: s.picked === null ? 'Pick the best answer.' : (s.picked === qz.answer ? 'Correct.' : qz.hint),
+      quizOptions: (qz ? qz.options : []).map((label, i) => {
+        const chosen = s.picked === i;
+        const right = s.picked !== null && i === qz.answer;
+        return {
+          label, key: String.fromCharCode(65 + i),
+          border: right ? '1.5px solid #1E874B' : chosen ? '1.5px solid #C0362C' : '1px solid #E6E6E6',
+          bg: right ? '#E5F4EC' : chosen ? '#F8E7E5' : '#FFFFFF',
+          mark: right ? 'Correct' : chosen ? 'Not quite' : '',
+          markColor: right ? '#1E874B' : '#C0362C',
+          choose: () => { if (s.picked === null) this.setState({ picked: i, score: s.score + (i === qz.answer ? 1 : 0) }); },
+        };
+      }),
+      quizNext: () => lastQ ? this.setState({ quizDone: true }) : this.setState({ quizIndex: s.quizIndex + 1, picked: null }),
+      quizResultTitle: s.score / QUIZ.length >= 0.7 ? 'Passed — ' + Math.round((s.score / QUIZ.length) * 100) + '%' : 'Not yet — ' + Math.round((s.score / QUIZ.length) * 100) + '%',
+      quizResultBody: s.score / QUIZ.length >= 0.7
+        ? 'You cleared the 70% threshold. In the real flow your H2O Certified badge would be issued and emailed to you.'
+        : 'You need 70% or higher to certify. Review the course lessons and retake the quiz — retakes are free and unlimited.',
+
+      chatOpen: s.chatOpen,
+      toggleChat: () => this.setState({ chatOpen: !s.chatOpen }),
+      chatDraft: s.chatDraft,
+      onChatDraft: (e) => this.setState({ chatDraft: e.target.value }),
+      onChatKey: (e) => { if (e.key === 'Enter') this.send(s.chatDraft); },
+      sendChat: () => this.send(s.chatDraft),
+      chatSuggestions: Object.keys(CHAT_REPLIES).map(label => ({ label, ask: () => this.send(label) })),
+      chatLog: s.chatLog.map(msg => ({
+        text: msg.text,
+        align: msg.from === 'bot' ? 'flex-start' : 'flex-end',
+        bg: msg.from === 'bot' ? '#FFFFFF' : '#FFDD00',
+        color: '#000000',
+        border: msg.from === 'bot' ? '1px solid #E6E6E6' : '1px solid #FFDD00',
+      })),
+    };
+  }
+
+  send(text) {
+    const t = (text || '').trim();
+    if (!t) return;
+    const reply = CHAT_REPLIES[t] || this.lookup(t);
+    this.setState(st => ({
+      chatDraft: '',
+      chatLog: st.chatLog.concat([{ from: 'me', text: t }, { from: 'bot', text: reply }]),
+    }));
+  }
+
+  lookup(t) {
+    const q = t.toLowerCase();
+    const hit = this.all().find(c => (c.title + ' ' + c.product + ' ' + c.track).toLowerCase().includes(q.replace(/[?.]/g, '')));
+    if (hit) return '“' + hit.title + '” looks like a match — ' + hit.level + ', ' + hit.duration + ', on ' + hit.product + '. Want the enrolment link?';
+    return 'I can point you to a course, a learning path, or explain how certification works. Try naming a product like h2oGPTe or Driverless AI.';
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/colors.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/typography.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/effects.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/tokens/base.css">
+<link rel="stylesheet" href="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/styles.css">
+<script src="_ds/h2o-ai-university-branding-kit-67129693-a921-44a6-a4dc-2457d2305e90/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; background: #FFFFFF; font-family: var(--font-body, Inter), sans-serif; }
+  a { color: #000000; text-decoration: none; }
+  a:hover { color: #4D4D4D; }
+  .lu { display: inline-flex; align-items: center; justify-content: center; }
+  .lu svg { width: 100%; height: 100%; display: block; stroke-width: 1.75; }
+  @keyframes h2oRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="background: #FFFFFF; color: #000000; min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid #E6E6E6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 28px;">
+      <a href="https://h2o.ai/" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/university/_jcr_content/root/container/header_copy_copy/logo.coreimg.svg/1784442620283/h2o-logo.svg" alt="H2O.ai" style="height: 26px; display: block;">
+      </a>
+      <a href="H2O University Home.dc.html" style="display: flex; align-items: center; gap: 18px; flex-shrink: 0;">
+        <span style="width: 1px; height: 26px; background: #E6E6E6; display: block;"></span>
+        <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/university/_jcr_content/root/container/header_copy_copy/logo-secondary.coreimg.svg/1784442620482/uni-logo-plain.svg" alt="H2O.ai University" style="height: 24px; display: block;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 30px; margin-left: auto; flex-wrap: wrap;">
+        <a href="H2O University Home.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">Home</a>
+        <a href="H2O University Courses.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">Courses</a>
+        <a href="H2O University Learning Paths.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid #FFDD00;">Learning paths</a>
+        <a href="H2O University FAQ.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #E6E6E6;">FAQ</a>
+        <a href="H2O University Partners.dc.html" style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: #FFDD00; color: #000000; padding: 10px 20px; border-radius: 999px;" style-hover="background: #E6C700;">Partner portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position: relative; padding: 72px 32px 60px; overflow: hidden; border-bottom: 1px solid #E6E6E6;">
+    <div style="position: absolute; top: 0; right: 0; pointer-events: none;">
+      <img src="https://h2o.ai/content/dam/h2o/images/marketing/section/decorator/blocks/hero-home-decorator-desktop.svg" alt="" style="display: block; width: 300px;">
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; display: grid; grid-template-columns: minmax(300px, 1fr) minmax(260px, 0.7fr); gap: 48px; align-items: center;">
+      <div>
+        <h1 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; letter-spacing: -0.025em; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.04; margin: 0 0 16px;">Learning Paths</h1>
+        <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4D4D4D; margin: 0 0 26px; font-weight: 500;">Get certified and learn.</p>
+        <p style="font-size: 17px; line-height: 1.65; color: #4D4D4D; margin: 0; max-width: 52ch;">Each path bundles courses in the order they build on each other. Open a path to see its courses, watch the trailer, and start at the level that fits you.</p>
+      </div>
+      <img src="https://h2o.ai/university/learning-paths/_jcr_content/root/container/section_240090213_co/par/advancedcolumncontro/columns1/image.coreimg.svg/1776945378223/lp-banner-logo.svg" alt="" style="width: 100%; max-width: 300px; display: block; justify-self: end;">
+    </div>
+  </section>
+
+  <section style="padding: 56px 32px 88px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 26px;">
+        <sc-for list="{{ paths }}" as="p" hint-placeholder-count="5">
+          <div onClick="{{ p.open }}" style="background: #FFFFFF; border: 1px solid #E6E6E6; border-radius: 16px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.06)); transition: transform 200ms cubic-bezier(0.4,0,0.2,1), box-shadow 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.10); border-color: #CFCFCF;">
+            <div style="position: relative; background: #F9F9F9; border-bottom: 1px solid #E6E6E6;">
+              <img src="{{ p.thumb }}" alt="{{ p.title }}" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block;">
+              <span style="position: absolute; top: 14px; left: 14px; background: #FFDD00; color: #000000; font-family: var(--font-mono, DM Mono), monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 6px 10px; border-radius: 4px;">Bundle</span>
+            </div>
+            <div style="padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+              <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 19px; line-height: 1.28; margin: 0; text-wrap: pretty;">{{ p.title }}</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: #6B6B6B; margin: 0; flex: 1;">{{ p.blurb }}</p>
+              <div style="display: flex; align-items: center; gap: 16px; padding-top: 14px; border-top: 1px solid #EFEFEF;">
+                <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #4D4D4D;">{{ p.countLabel }}</span>
+                <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #808080;">{{ p.duration }}</span>
+                <span style="margin-left: auto; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px;">View path <span class="lu" data-icon="arrow-right" style="width: 14px; height: 14px;"></span></span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 84px 32px; background: #F9F9F9; border-top: 1px solid #E6E6E6;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
+      <div style="max-width: 58ch;">
+        <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/university/_jcr_content/root/container/header_copy_copy/logo-secondary.coreimg.svg/1784442620482/uni-logo-plain.svg" alt="H2O.ai University" style="height: 26px; display: block; margin-bottom: 22px;">
+        <h2 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -0.02em; line-height: 1.14; margin: 0 0 16px;">Learn hands on</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #4D4D4D; margin: 0;">Follow structured learning paths designed to build real, production-ready AI skills. Learn at your own pace, practice on real environments, and validate your knowledge through certification.</p>
+      </div>
+      <a href="H2O University Courses.dc.html" style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; background: #FFDD00; color: #000000; padding: 16px 30px; border-radius: 999px;" style-hover="background: #E6C700;">Browse all courses</a>
+    </div>
+  </section>
+
+  <footer style="background: #000000; color: #FFFFFF; padding: 60px 32px 34px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between; align-items: flex-start; padding-bottom: 34px; border-bottom: 1px solid #2E2E2E;">
+      <img src="https://h2o.ai/content/experience-fragments/h2o/us/en/site/header/master/_jcr_content/root/container/header_copy/logo.coreimg.svg/1782337746232/h2o-logo.svg" alt="H2O.ai" style="height: 26px; display: block; filter: invert(1);">
+      <nav style="display: flex; flex-wrap: wrap; gap: 26px;">
+        <a href="H2O University Courses.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Courses</a>
+        <a href="H2O University Learning Paths.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Learning paths</a>
+        <a href="H2O University FAQ.dc.html" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">FAQ</a>
+        <a href="https://h2o.ai/docs/" style="color: #CFCFCF; font-family: var(--font-mono, DM Mono), monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;" style-hover="color: #FFFFFF;">Documentation</a>
+      </nav>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://www.youtube.com/user/0xdata"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/YouTube-gray.svg" alt="YouTube" style="height: 18px; display: block;"></a>
+        <a href="https://www.linkedin.com/company/h2oai/"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/Linkedin-gray.svg" alt="LinkedIn" style="height: 18px; display: block;"></a>
+        <a href="https://twitter.com/h2oai"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/X-gray.svg" alt="X" style="height: 18px; display: block;"></a>
+        <a href="https://github.com/h2oai"><img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/social-icons/Github-gray.svg" alt="GitHub" style="height: 18px; display: block;"></a>
+      </div>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center;">
+      <p style="margin: 0; font-size: 12.5px; color: #808080;">Copyright © 2026 H2O.ai. All rights reserved.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+        <a href="https://h2o.ai/legal/privacy/" style="color: #808080; font-size: 12.5px;" style-hover="color: #FFFFFF;">Privacy policy</a>
+        <a href="https://h2o.ai/legal/terms-of-use/" style="color: #808080; font-size: 12.5px;" style-hover="color: #FFFFFF;">Terms of use</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ hasModal }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 90; display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; overflow-y: auto;">
+      <div onClick="{{ stop }}" style="background: #FFFFFF; border-radius: 20px; max-width: 940px; width: 100%; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.3); animation: h2oRise 200ms cubic-bezier(0.4,0,0.2,1);">
+        <div style="background: #000000; color: #FFFFFF; padding: 28px 34px; display: flex; gap: 20px; align-items: center;">
+          <img src="https://h2o.ai/etc.clientlibs/h2o/clientlibs/clientlib-site/resources/icons/university/leraning_path-decorator.svg" alt="" style="height: 34px; display: block; flex-shrink: 0;">
+          <div style="flex: 1; min-width: 0;">
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #FFDD00; margin: 0 0 8px; font-weight: 700;">Bundle · {{ modal.countLabel }} · {{ modal.duration }}</p>
+            <h3 style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 25px; letter-spacing: -0.02em; line-height: 1.2; margin: 0;">{{ modal.title }}</h3>
+          </div>
+          <button onClick="{{ closeModal }}" style="border: 1px solid #4D4D4D; background: transparent; color: #FFFFFF; width: 34px; height: 34px; border-radius: 999px; cursor: pointer; font-size: 16px; line-height: 1; flex-shrink: 0;" style-hover="background: #2E2E2E;">×</button>
+        </div>
+        <div style="padding: 30px 34px 34px; display: grid; grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.9fr); gap: 32px;">
+          <div>
+            <p style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B6B; margin: 0 0 14px;">Courses in this path</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ modal.courses }}" as="c" hint-placeholder-count="3">
+                <a href="{{ c.url }}" target="_blank" style="display: flex; gap: 14px; align-items: flex-start; border: 1px solid #E6E6E6; border-radius: 12px; padding: 16px;" style-hover="background: #F9F9F9; border-color: #CFCFCF;">
+                  <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #000000; background: #FFDD00; border-radius: 4px; padding: 5px 8px; flex-shrink: 0; font-weight: 700;">{{ c.step }}</span>
+                  <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                    <span style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 600; font-size: 15px; line-height: 1.35;">{{ c.title }}</span>
+                    <span style="font-size: 13.5px; line-height: 1.55; color: #6B6B6B;">{{ c.blurb }}</span>
+                    <span style="font-family: var(--font-mono, DM Mono), monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #808080;">{{ c.meta }}</span>
+                  </span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <sc-if value="{{ modal.hasVideo }}" hint-placeholder-val="{{ false }}">
+              <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E6E6E6; aspect-ratio: 16 / 9; background: #F9F9F9;">
+                <iframe src="{{ modal.videoUrl }}" title="{{ modal.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen="true" style="width: 100%; height: 100%; border: 0; display: block;"></iframe>
+              </div>
+            </sc-if>
+            <div style="background: #F9F9F9; border: 1px solid #E6E6E6; border-radius: 14px; padding: 20px;">
+              <p style="font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 15.5px; margin: 0 0 8px;">Certification included</p>
+              <p style="font-size: 13.5px; line-height: 1.6; color: #4D4D4D; margin: 0;">Complete the courses in order, then pass each quiz with 70% or higher to earn your badges.</p>
+            </div>
+            <a href="{{ modal.url }}" target="_blank" style="text-align: center; background: #FFDD00; color: #000000; font-family: var(--font-display, DM Sans), sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px; border-radius: 999px; display: block;" style-hover="background: #E6C700;">Start this path</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const CB = 'https://h2o.ai/university/courses/';
+const DAM = 'https://h2o.ai/content/dam/h2o/images/marketing/university/';
+
+const PATHS = [
+  { id: 'gen-ai-learning-path', title: 'Gen AI Learning Path', duration: '8h', video: 'h_1YOHs2Qms',
+    thumb: DAM + 'learning-path-thumbnails/Gen%20AI%20Learning%20Path%20Thumbnail.png',
+    blurb: 'The full H2O.ai Generative AI ecosystem — tools, use cases, and case studies across two levels.',
+    courses: [
+      { title: 'H2O Gen AI Ecosystem Overview - Level 1', slug: 'ecosystem-overview-level1', meta: 'Beginner · 6h 36m',
+        blurb: 'Addresses diverse business challenges using AI tools, enhancing skills and offering concrete solutions and case studies.' },
+      { title: 'H2O Gen AI Ecosystem Overview - Level 2', slug: 'ecosystem-overview-level2', meta: 'Intermediate · 1h 24m',
+        blurb: 'Delves into the various tools, applications, and methodologies H2O.ai offers for AI and ML.' },
+    ] },
+  { id: 'large-language-models', title: 'Large Language Models (LLMs)', duration: '4h 54m', video: '1nOir-L-fwU',
+    thumb: DAM + 'learning-path-thumbnails/LLM-Learning-Path-Thumbnail.png',
+    blurb: 'From language-model foundations to fine-tuning, evaluation, and LLM applications.',
+    courses: [
+      { title: 'Large Language Models (LLMs) - Level 1', slug: 'large-language-models-level1', meta: 'Beginner · 1h 20m',
+        blurb: 'A foundational understanding of language models and LLMs and their applications.' },
+      { title: 'Large Language Models (LLMs) - Level 2', slug: 'large-language-models-level2', meta: 'Intermediate · 1h 58m',
+        blurb: 'Advanced data preparation and fine-tuning using LLMs.' },
+      { title: 'Large Language Models (LLMs) - Level 3', slug: 'large-language-models-level3', meta: 'Intermediate · 1h 36m',
+        blurb: 'LLM applications, evaluation, and the H2O.ai GenAI ecosystem.' },
+    ] },
+  { id: 'h2o-driverless-ai-learning-path', title: 'H2O Driverless AI', duration: '3h 21m', video: 'Zaw6LP4iGqI',
+    thumb: DAM + 'learning-path-thumbnails/H2O%20Driverless%20AI%20Learning%20Path%20-%20Thumbnail.png',
+    blurb: 'Data preparation through AutoML and deployment with H2O Driverless AI.',
+    courses: [
+      { title: 'Data Prep for H2O Driverless AI', slug: 'data-prep-for-h2o-driverless-ai', meta: 'Beginner · 1h 11m',
+        blurb: 'Part of the certification program — the skills to effectively use H2O Driverless AI.' },
+      { title: 'Driverless AI Starter Course', slug: 'driverless-ai-starter-course', meta: 'Beginner · 2h 10m',
+        blurb: 'Automate data science workflows and master the machine learning steps, with assignments and a certificate.' },
+    ] },
+  { id: 'enterprise-h2ogpte-essentials', title: 'Enterprise h2oGPTe Essentials', duration: '4h 23m', video: '',
+    thumb: DAM + 'h2oGPTe%20Essentials%20-%20Learning%20Path.png',
+    blurb: 'RAG, enterprise workflows, and agents on Enterprise h2oGPTe.',
+    courses: [
+      { title: 'An In-depth Exploration of h2oGPTe', slug: 'an-in-depth-exploration-of-h2o-gpte', meta: 'Intermediate · 1h 45m',
+        blurb: 'Hands-on training covering advanced features, Python integration, and AI app development with H2O Wave.' },
+      { title: 'H2O Generative AI Starter Track', slug: 'h2o-generative-ai-starter-track', meta: 'Intermediate · 1h 29m',
+        blurb: 'Practical applications of Generative AI technology using h2oGPTe.' },
+      { title: 'H2O.ai Agents : Theory to Practice', slug: 'h2o-ai-agents-from-theory-to-practice', meta: 'Intermediate · 1h 9m',
+        blurb: 'Agentic workflows, automation, and real-world use cases.' },
+    ] },
+  { id: 'h2o-ai-and-ml-services', title: 'H2O AI and ML Services Learning Path', duration: '1h 15m', video: '',
+    thumb: DAM + 'learning-path-thumbnails/H2O%20AI%20and%20ML%20Services%20%20Learning%20Path_%20Tinified.png',
+    blurb: 'How H2O.ai transforms data preparation, model building, and deployment across the lifecycle.',
+    courses: [
+      { title: 'Data Science and Machine Learning Platforms', slug: 'data-science-and-machine-learning-platforms', meta: 'Intermediate · 1h 15m',
+        blurb: 'How H2O.ai is transforming data preparation, model building, and deployment.' },
+      { title: 'The AI Lifecycle with the H2O.ai Platform: From Data to Production', slug: 'the-ai-lifecycle-with-the-h2o-ai-platform--from-data-to-producti', meta: 'Intermediate',
+        blurb: 'A use case traced from data through to production on the H2O.ai platform.' },
+    ] },
+];
+
+class Component extends DCLogic {
+  state = { open: null };
+
+  componentDidMount() { this.icons(); }
+  componentDidUpdate() { this.icons(); }
+  icons() {
+    if (!window.lucide) return;
+    let dirty = false;
+    document.querySelectorAll('.lu[data-icon]').forEach(el => {
+      const name = el.getAttribute('data-icon');
+      const svg = el.firstElementChild;
+      if (svg && svg.tagName.toLowerCase() === 'svg' && svg.classList.contains('lucide-' + name)) return;
+      el.innerHTML = '<i data-lucide="' + name + '"></i>';
+      dirty = true;
+    });
+    if (dirty) { try { window.lucide.createIcons(); } catch (e) {} }
+  }
+
+  renderVals() {
+    const p = this.state.open;
+    return {
+      paths: PATHS.map(x => ({
+        ...x,
+        countLabel: x.courses.length + ' courses',
+        open: () => this.setState({ open: x }),
+      })),
+      hasModal: !!p,
+      closeModal: () => this.setState({ open: null }),
+      stop: (e) => e.stopPropagation(),
+      modal: p ? {
+        title: p.title, duration: p.duration, countLabel: p.courses.length + ' courses',
+        hasVideo: !!p.video,
+        videoUrl: p.video ? 'https://www.youtube.com/embed/' + p.video : '',
+        url: 'https://h2o.ai/university/learning-paths?path=' + p.id,
+        courses: p.courses.map((c, i) => ({ ...c, step: 'Level ' + (i + 1), url: CB + c.slug })),
+      } : {},
+    };
+  }
+}
+</script>
+</body>
+</html>
